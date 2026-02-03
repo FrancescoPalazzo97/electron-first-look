@@ -12,5 +12,8 @@
   "type": "module",
   "devDependencies": {
     "electron": "^40.1.0"
+  },
+  "dependencies": {
+    "webp-converter": "^2.3.3"
   }
 }
