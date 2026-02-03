@@ -14,4 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
         ipcRenderer.send('test', { nome: 'Francesco', cognome: 'Palazzo' });
     })
+
+    ipcRenderer.on('reply', (e, data) => {
+        console.log('data: ', data)
+    })
 })

@@ -5,8 +5,10 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+let win;
+
 const createWindow = () => {
-    const win = new BrowserWindow({
+    win = new BrowserWindow({
         width: 800,
         height: 600,
         webPreferences: {
@@ -25,4 +27,5 @@ app.whenReady().then(() => {
 
 ipcMain.on('test', (e, data) => {
     console.log(data);
+    win.webContents.send('reply', data);
 })
