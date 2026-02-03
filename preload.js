@@ -1,4 +1,4 @@
-const { ipcRenderer } = require('electron');
+import { ipcRenderer } from 'electron';
 
 window.addEventListener('DOMContentLoaded', () => {
     const replaceText = (selector, text) => {
