@@ -17,6 +17,22 @@ window.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('btn');
     btn.addEventListener('click', convertPhoto);
 
+    const minimizeBtn = document.getElementById('minimize-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const maximizeBtn = document.getElementById('maximize-btn');
+
+    minimizeBtn.addEventListener('click', () => {
+        ipcRenderer.send('window:minimize');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        ipcRenderer.send('window:close');
+    });
+
+    maximizeBtn.addEventListener('click', () => {
+        ipcRenderer.send('window:maximize');
+    });
+
     ipcRenderer.on('img:convertita', () => {
         const mess = document.getElementById('mess');
         mess.innerText = 'Immagine convertita con successo'

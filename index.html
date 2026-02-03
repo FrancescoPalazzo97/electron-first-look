@@ -3,16 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Webp Converter</title>
+    <style>
+        .menu {
+            -webkit-app-region: drag;
+            height: 50px;
+            background-color: red;
+            width: 100%;
+            border-radius: 30px 30px 0 0;
+            text-align: right;
+        }
+
+        .rounded {
+            border-radius: 30px;
+            width: 100%;
+            height: calc(100vh - 20px);
+            background-color: aliceblue;
+        }
+
+        .menu-btn {
+            -webkit-app-region: no-drag;
+            width: 40px;
+            width: 40px;
+            background-color: gray;
+            margin: 5px 15px 0 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Webp Converter</h1>
-    <ul>
-        <li>Node version: <span id="node-version"></span></li>
-        <li>Chrome version: <span id="chrome-version"></span></li>
-        <li>Electron version: <span id="electron-version"></span></li>
-    </ul>
-    <p id="mess"></p>
-    <button id="btn">Coverti</button>
+    <div class="rounded">
+        <div class="menu">
+            <button title="minimize" id="minimize-btn" class="menu-btn">.</button>
+            <button title="maximize" id="maximize-btn" class="menu-btn">.</button>
+            <button title="close" id="close-btn" class="menu-btn">.</button>
+        </div>
+        <h1>Webp Converter</h1>
+        <ul>
+            <li>Node version: <span id="node-version"></span></li>
+            <li>Chrome version: <span id="chrome-version"></span></li>
+            <li>Electron version: <span id="electron-version"></span></li>
+        </ul>
+        <p id="mess"></p>
+        <button id="btn">Coverti</button>
+    </div>
 </body>
 </html>
