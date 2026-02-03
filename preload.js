@@ -10,12 +10,15 @@ window.addEventListener('DOMContentLoaded', () => {
         replaceText(`${type}-version`, process.versions[type])
     }
 
-    const btn = document.getElementById('btn');
-    btn.addEventListener('click', () => {
-        ipcRenderer.send('test', { nome: 'Francesco', cognome: 'Palazzo' });
-    })
+    const convertPhoto = () => {
+        ipcRenderer.send('img:converted');
+    }
 
-    ipcRenderer.on('reply', (e, data) => {
-        console.log('data: ', data)
+    const btn = document.getElementById('btn');
+    btn.addEventListener('click', convertPhoto);
+
+    ipcRenderer.on('img:convertita', () => {
+        const mess = document.getElementById('mess');
+        mess.innerText = 'Immagine convertita con successo'
     })
 })
