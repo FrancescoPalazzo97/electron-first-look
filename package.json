@@ -1,0 +1,16 @@
+{
+  "name": "electron-first-look",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "electron": "^40.1.0"
+  }
+}
