@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -20,3 +20,7 @@ const createWindow = () => {
 app.whenReady().then(() => {
     createWindow();
 });
+
+ipcMain.on('test', (e, data) => {
+    console.log(data);
+})
